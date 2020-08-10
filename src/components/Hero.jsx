@@ -13,16 +13,17 @@ class Hero extends Component {
         <h5 className="card-title">{this.props.avenger.name}</h5>
         <h6>{this.props.avenger.birthname}</h6>
           <ul> {this.showMovies()} </ul>
-       <button className="btn btn-primary" 
-       onClick={() => {
-        this.likeAvenger(1)
-        }} 
-        >
+       <button className="btn btn-info" onClick = {this.props.onLike}>
         Like {" "}
       {/* </button> <button className="btn btn-primary" onClick={this.likeAvenger}>Like {" "} */}
         <span className="badge badge-light">
           {this.props.avenger.likeCount}
           </span> 
+       </button>
+       {" "}
+       <button className="btn btn-danger" onClick={this.props.onDelete}> 
+       {" "}
+       Delete
        </button>
     </div>
 </div>
@@ -41,9 +42,7 @@ isHero() {
       //return li element for every value inside the 'movie' array
   }
 
-    likeAvenger = (likeCounter) => {
-     // this.setState({likeCount : this.state.likeCount + likeCounter});
-  };
+
 }
 
 export default Hero;
